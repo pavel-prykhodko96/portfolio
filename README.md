@@ -1,9 +1,9 @@
 ## Portfolio
-Here are some projects and tasks to show my knowledge and skills.  
-They were created during the study, completing test tasks from different companies, books.  
+Here are some projects and tasks to show some of my knowledge and skills.  
+They were created for different goals: study, completion test task from companies, my own wish.  
 
 #### Short descriptions of each, sorted by month and year of completion:  
 * alien_invasion - the project (game), written on Python, September 2019  
-* dollars_to_words - test task from one company, written on C++, August 2019  
-* wheels - test task from one company, written on C++, March 2019  
+* dollars_to_words - test task for one company, written on C++, August 2019  
+* wheels - test task for one company, written on C++, March 2019  
 * calculator - the project, written on C++, November 2018  
