@@ -6,4 +6,5 @@ They were created for different goals: study, completion test task for different
 * alien_invasion - the project (game), written on Python, September 2019  
 * dollars_to_words - test task for one company, written on C++, August 2019  
 * wheels - test task for one company, written on C++, March 2019  
+* ball_path - task from programming courses, written on C++, January 2019  
 * calculator - the project, written on C++, November 2018  
