@@ -1,6 +1,6 @@
 ## Portfolio
 Here are some projects and tasks to show my knowledge and skills.  
-They were created during the study, completing test task from different companies, books.  
+They were created during the study, completing test tasks from different companies, books.  
 
 #### Short descriptions of each, sorted by month and year of completion:  
 * alien_invasion - the project (game), written on Python, September 2019  
