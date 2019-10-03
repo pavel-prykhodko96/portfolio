@@ -17,8 +17,7 @@ You can see below that the two wheels that are left outside the example can’t 
 
 ![Image2](https://github.com/pavel-prykhodko96/portfolio/raw/master/wheels/description_picture_2.png)  
 
-Please write a code (with any convenient for you language ) which will solve and find the right order of the wheels.  
-As a solution, I would like to get from you :  
+Please write a code (with any convenient for you language ) which will solve and find the right order of the wheels. As a solution, I would like to get from you :  
 
 * Which wheel number is the central wheel ?  
 * What is the order of the other wheels around the central wheel ?  
