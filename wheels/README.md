@@ -2,6 +2,7 @@
 
 In the picture you see below there are 7 wheels. On each wheel there are six colors in a different order, which means that the order of colors (looking clockwise) is different.  
 The colors are green,black,yellow,blue,red,white (same colors on all wheel, just different order on each).  
+
 The wheels are numbered in the picture as number 1 to number 7. Number 1 is the most left wheel, and 7 is the most right wheel.  
 In the middle of each wheel there is a hole, to place the wheel on a pin of a wood plate as seen in the picture.  
 
