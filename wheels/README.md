@@ -9,7 +9,7 @@ In the middle of each wheel there is a hole, to place the wheel on a pin of a wo
 
 So you should place the seven wheels on the seven pins in a specific order to solve the problem  
 
-cid:image001.png@01D14887.294E7ED0  
+![Image1](https://github.com/pavel-prykhodko96/portfolio/raw/master/wheels/description_picture_1.png)
 
 Please write a code (with any convenient for you language )  which will solve the way the wheels should be placed on the plate in order to have the following: Each wheel, on each touch point with another wheel, is touching it with the same color.  
 
