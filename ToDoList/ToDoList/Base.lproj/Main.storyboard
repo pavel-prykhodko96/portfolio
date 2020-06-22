@@ -37,20 +37,20 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TzM-15-Jdv">
-                                            <rect key="frame" x="58.5" y="16" width="327.5" height="12.5"/>
+                                            <rect key="frame" x="58.5" y="11" width="327.5" height="22.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="TzM-15-Jdv" secondAttribute="trailing" constant="8" id="0jE-WR-Py5"/>
-                                        <constraint firstItem="TzM-15-Jdv" firstAttribute="top" secondItem="vw6-t5-cfg" secondAttribute="topMargin" constant="5" id="3JS-5K-Sy9"/>
                                         <constraint firstItem="9T3-sH-LeG" firstAttribute="leading" secondItem="vw6-t5-cfg" secondAttribute="leading" constant="16" id="8RM-wo-E2O"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="TzM-15-Jdv" secondAttribute="trailing" constant="8" id="8hy-xi-FTg"/>
+                                        <constraint firstItem="TzM-15-Jdv" firstAttribute="top" secondItem="vw6-t5-cfg" secondAttribute="topMargin" id="EKj-f2-Huj"/>
                                         <constraint firstAttribute="bottom" secondItem="9T3-sH-LeG" secondAttribute="bottom" constant="4.5" id="HjU-ZX-lbN"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="TzM-15-Jdv" secondAttribute="bottom" constant="5" id="Y2u-j4-x5c"/>
                                         <constraint firstItem="9T3-sH-LeG" firstAttribute="top" secondItem="vw6-t5-cfg" secondAttribute="top" constant="5" id="YFI-8f-VVh"/>
-                                        <constraint firstItem="TzM-15-Jdv" firstAttribute="leading" secondItem="9T3-sH-LeG" secondAttribute="trailing" constant="8" id="p9B-oE-uNd"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="TzM-15-Jdv" secondAttribute="bottom" id="jWK-5I-Qb7"/>
+                                        <constraint firstItem="TzM-15-Jdv" firstAttribute="leading" secondItem="9T3-sH-LeG" secondAttribute="trailing" constant="8" id="tBC-Va-YTp"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
