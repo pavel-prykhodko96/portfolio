@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:thoughts/colors.dart';
+import 'package:thoughts/constants/colors.dart';
 
 class DrawerMenuButton extends StatelessWidget {
   final String _text;

@@ -23,7 +23,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-    
+
+  bloc: ^6.1.1
+  flutter_bloc: ^6.1.2
+
   # Firebase:
   firebase_core: ^0.4.0+9
   firebase_auth: ^0.14.0+5
