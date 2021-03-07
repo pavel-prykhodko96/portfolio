@@ -14,7 +14,7 @@ class DrawerMenuButton extends StatelessWidget {
         alignment: Alignment.centerLeft,
         child: Text(
           _text,
-          style: TextStyle(color: whiteColor),
+          style: TextStyle(color: ThoughtsColors.whiteColor),
         ),
       ),
     );
