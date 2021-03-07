@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:thoughts/constants/colors.dart';
-import 'package:thoughts/widgets/drawerMenuButton.dart';
-import 'package:thoughts/widgets/thoughtsLabel.dart';
+import 'package:thoughts/post/bloc/post_bloc.dart';
+import 'package:thoughts/post/bloc/post_events.dart';
+import 'package:thoughts/post/bloc/post_states.dart';
+import 'package:thoughts/post/post_widget.dart';
+import 'package:thoughts/widgets/drawer_menu_button.dart';
+import 'package:thoughts/widgets/thoughts_label.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -9,11 +14,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _currentIdex = 1;
+  int _currentTabIndex = 1;
 
   void _changeTab(newIndex) {
     setState(() {
-      _currentIdex = newIndex;
+      _currentTabIndex = newIndex;
+      BlocProvider.of<PostBloc>(context).add(AllPosts());
     });
   }
 
@@ -25,22 +31,22 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         drawer: Drawer(
           child: Container(
-            color: themeColor,
+            color: ThoughtsColors.themeColor,
             child: ListView(
               physics: NeverScrollableScrollPhysics(),
               children: [
                 SizedBox(height: 60, child: ThoughtsLabel()),
-                Divider(height: 0, color: whiteColor),
+                Divider(height: 0, color: ThoughtsColors.whiteColor),
                 DrawerMenuButton("Edit profile", null),
-                Divider(height: 0, color: whiteColor),
+                Divider(height: 0, color: ThoughtsColors.whiteColor),
                 DrawerMenuButton("Log out", null),
-                Divider(height: 0, color: whiteColor),
+                Divider(height: 0, color: ThoughtsColors.whiteColor),
               ],
             ),
           ),
         ),
         floatingActionButton: FloatingActionButton(
-          backgroundColor: actionColor,
+          backgroundColor: ThoughtsColors.actionColor,
           onPressed: null,
           child: Icon(Icons.add, size: 32),
         ),
@@ -49,21 +55,47 @@ class _HomeScreenState extends State<HomeScreen> {
           leading: Builder(
             builder: (context) {
               return IconButton(
-                color: whiteColor,
+                color: ThoughtsColors.whiteColor,
                 icon: Icon(Icons.menu),
                 onPressed: () => Scaffold.of(context).openDrawer(),
               );
             },
           ),
         ),
+        body: BlocBuilder<PostBloc, PostState>(
+          builder: (context, state) {
+            if (state is PostInitial) {
+              return Center(
+                child: CircularProgressIndicator(),
+              );
+            }
+            if (state is PostSuccess) {
+              if (state.posts.isEmpty) {
+                return Center(
+                  child: Text('no posts'),
+                );
+              }
+              return ListView.builder(
+                itemBuilder: (BuildContext context, int index) {
+                  return PostWidget(post: state.posts[index]);
+                },
+                itemCount: 1,
+                // controller: _scrollController,
+              );
+            }
+            return Center(
+              child: Text('Something went wrong'),
+            );
+          },
+        ),
         bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _currentIdex,
+          currentIndex: _currentTabIndex,
           onTap: _changeTab,
           showSelectedLabels: false,
           showUnselectedLabels: false,
-          unselectedItemColor: whiteColor,
-          selectedItemColor: actionColor,
-          backgroundColor: themeColor,
+          unselectedItemColor: ThoughtsColors.whiteColor,
+          selectedItemColor: ThoughtsColors.actionColor,
+          backgroundColor: ThoughtsColors.themeColor,
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
