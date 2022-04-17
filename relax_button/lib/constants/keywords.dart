@@ -1,4 +1,4 @@
-abstract class RiveAnimationKeywords {
+abstract class ButtonBoxKeywords {
   static const mainStateMachine = "MainSM";
   static const pressed = "Pressed";
   static const unpressed = "Unpressed";
