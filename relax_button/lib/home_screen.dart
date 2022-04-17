@@ -17,33 +17,23 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: check if it will rebuilt if placed to 'body' directly.
+    // TODO: check will it be rebuilt if placed to 'body' directly.
+    // TODO: replaace with button box animation with property onInit that throws artboard up (without delegation)
     final _riveButtonBoxAnimation = RiveAnimation.asset(
-      Paths.buttonBoxAsset,
+      AnimationsPaths.buttonBoxAsset,
       fit: BoxFit.contain,
       onInit: _homeScreenController.initButtonBoxAnimationDelegate,
     );
 
     // TODO: streams for background color/picture and aadditional animations.
-
     // TODO: replace Scaffold with Container?
     return Scaffold(
       // TODO: save this color somewhere.
       backgroundColor: const Color(0xff7DC4D9),
-      body: _riveButtonBoxAnimation,
-      // TODO: buttons are temp:
-      bottomNavigationBar: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          ElevatedButton(
-            onPressed: () => _homeScreenController.press(),
-            child: Text("Press"),
-          ),
-          ElevatedButton(
-            onPressed: () => _homeScreenController.unpress(),
-            child: Text("Unpress"),
-          ),
-        ],
+      body: GestureDetector(
+        child: _riveButtonBoxAnimation,
+        // TODO: press only if tapped on the box, not anywhere?
+        onTap: () => _homeScreenController.press(),
       ),
     );
   }

@@ -1,7 +1,7 @@
 import 'package:relax_button/constants/keywords.dart';
 import 'package:rive/rive.dart';
 
-// TODO: replaace with button box animation with property onInit that throws artboard up
+// TODO: replaace with button box animation with property onInit that throws artboard up (without delegation)?
 class ButtonBoxAnimationDelegate {
   late final StateMachineController _stateMachineController;
   late final SMITrigger _press;
