@@ -11,6 +11,7 @@ abstract class SoundsPaths {
   static const doubleBirdChirp = 'assets/sounds/double_bird_chirp.wav';
   static const fastSmallSweepTransition =
       'assets/sounds/fast_small_sweep_transition.wav';
+  static const howDareYouGreta = 'assets/sounds/how_dare_you_greta.mp3';
   static const lionAnimalRoar = 'assets/sounds/lion_animal_roar.wav';
   static const retroGameNotification =
       'assets/sounds/retro_game_notification.wav';

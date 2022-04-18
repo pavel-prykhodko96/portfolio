@@ -33,7 +33,7 @@ class HomeScreen extends StatelessWidget {
       body: GestureDetector(
         child: _riveButtonBoxAnimation,
         // TODO: press only if tapped on the box, not anywhere?
-        onTap: () => _homeScreenController.press(),
+        onTap: _homeScreenController.onButtonBoxTapped,
       ),
     );
   }

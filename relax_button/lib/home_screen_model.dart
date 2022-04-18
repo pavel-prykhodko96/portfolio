@@ -10,6 +10,7 @@ class HomeScreenModel {
     SoundsPaths.doubleBirdChirp,
     SoundsPaths.fastSmallSweepTransition,
     SoundsPaths.lionAnimalRoar,
+    SoundsPaths.howDareYouGreta,
     SoundsPaths.retroGameNotification,
     SoundsPaths.trumpetFanfare,
   ];
