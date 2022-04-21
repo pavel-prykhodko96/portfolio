@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:relax_button/home_screen_controller.dart';
+import 'package:relax_button/screens/button_box/button_box_screen_controller.dart';
 import 'package:relax_button/constants/paths.dart';
 import 'package:rive/rive.dart';
 
-// class HomeScreen extends StatefulWidget {
-//   const HomeScreen({Key? key}) : super(key: key);
+// class ButtonBoxScreen extends StatefulWidget {
+//   const ButtonBoxScreen({Key? key}) : super(key: key);
 
 //   @override
-//   State<HomeScreen> createState() => _HomeScreenState();
+//   State<ButtonBoxScreen> createState() => _ButtonBoxScreenState();
 // }
 
-class HomeScreen extends StatelessWidget {
-  final HomeScreenController _homeScreenController = HomeScreenController();
+class ButtonBoxScreen extends StatelessWidget {
+  final ButtonBoxScreenController _buttonBoxScreenController =
+      ButtonBoxScreenController();
 
-  HomeScreen({Key? key}) : super(key: key);
+  ButtonBoxScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,7 @@ class HomeScreen extends StatelessWidget {
     final _riveButtonBoxAnimation = RiveAnimation.asset(
       AnimationsPaths.buttonBoxAsset,
       fit: BoxFit.contain,
-      onInit: _homeScreenController.initButtonBoxAnimationDelegate,
+      onInit: _buttonBoxScreenController.initButtonBoxAnimationDelegate,
     );
 
     // TODO: streams for background color/picture and aadditional animations.
@@ -33,7 +34,7 @@ class HomeScreen extends StatelessWidget {
       body: GestureDetector(
         child: _riveButtonBoxAnimation,
         // TODO: press only if tapped on the box, not anywhere?
-        onTap: _homeScreenController.onButtonBoxTapped,
+        onTap: _buttonBoxScreenController.onButtonBoxTapped,
       ),
     );
   }

@@ -1,6 +1,6 @@
 import 'package:relax_button/constants/paths.dart';
 
-class HomeScreenModel {
+class ButtonBoxScreenModel {
   // TODO: is it needed to replace with themes?
   static const possibleSoundsAssetsPaths = <String>[
     SoundsPaths.audienceApplause,

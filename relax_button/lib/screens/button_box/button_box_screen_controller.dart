@@ -1,12 +1,12 @@
 import 'dart:math';
 
 import 'package:just_audio/just_audio.dart';
-import 'package:relax_button/button_box_animation_delegate.dart';
+import 'package:relax_button/screens/button_box/button_box_animation_delegate.dart';
 import 'package:relax_button/constants/paths.dart';
-import 'package:relax_button/home_screen_model.dart';
+import 'package:relax_button/screens/button_box/button_box_screen_model.dart';
 import 'package:rive/rive.dart';
 
-class HomeScreenController {
+class ButtonBoxScreenController {
   // TODO: currently it is here, but is it ok?:
   final AudioPlayer _audioPlayer = AudioPlayer();
   bool _isPressed = false;
@@ -14,7 +14,7 @@ class HomeScreenController {
 
   // bool get isPressed => _isPressed;
 
-  HomeScreenController() {}
+  ButtonBoxScreenController() {}
 
   // TODO: to be extendeed with changing background color, playing sounds etc.
   // TODO: fix it to set the controller only once. Set as final?
@@ -31,10 +31,10 @@ class HomeScreenController {
     // TODO: refactor condition and selecting random value?
     if (_buttonBoxAnimationDelegate != null && !_isPressed) {
       _isPressed = true;
-      final randomInt =
-          Random().nextInt(HomeScreenModel.possibleSoundsAssetsPaths.length);
+      final randomInt = Random()
+          .nextInt(ButtonBoxScreenModel.possibleSoundsAssetsPaths.length);
       _audioPlayer
-          .setAsset(HomeScreenModel.possibleSoundsAssetsPaths[randomInt])
+          .setAsset(ButtonBoxScreenModel.possibleSoundsAssetsPaths[randomInt])
           .then((assetDuration) {
         _audioPlayer.play();
 
