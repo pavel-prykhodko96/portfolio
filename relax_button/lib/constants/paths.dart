@@ -1,19 +1,17 @@
 abstract class AnimationsPaths {
-  static const buttonBoxAsset = 'assets/rive_animations/button_box.riv';
+  static const buttonBoxAsset =
+      'assets/rive_animations/button_box_fixed_projection.riv';
 }
 
 abstract class SoundsPaths {
-  static const agressiveBeasRoar = 'assets/sounds/aggressive_beast_roar.wav';
-  static const angryAndAgitatedDogGrowling =
-      'assets/sounds/angry_and_agitated_dog_growling.wav';
-  static const arcadeRetroGameOver = 'assets/sounds/arcade_retro_game_over.wav';
-  static const crowdLaugh = 'assets/sounds/crowd_laugh.wav';
-  static const doubleBirdChirp = 'assets/sounds/double_bird_chirp.wav';
-  static const fastSmallSweepTransition =
-      'assets/sounds/fast_small_sweep_transition.wav';
-  static const howDareYouGreta = 'assets/sounds/how_dare_you_greta.mp3';
-  static const lionAnimalRoar = 'assets/sounds/lion_animal_roar.wav';
-  static const retroGameNotification =
-      'assets/sounds/retro_game_notification.wav';
-  static const trumpetFanfare = 'assets/sounds/trumpet_fanfare.wav';
+  static const audienceApplause = 'assets/sounds/audience_applause.mp3';
+  static const bellsTibetan = 'assets/sounds/bells_tibetan.mp3';
+  static const blop = 'assets/sounds/blop.mp3';
+  static const chineseGong = 'assets/sounds/chinese_gong.mp3';
+  static const glassPing = 'assets/sounds/glass_ping.mp3';
+  static const iLoveYou = 'assets/sounds/i_love_you.mp3';
+  static const iceCubesGlass = 'assets/sounds/ice_cubes_glass.mp3';
+  static const metalGong = 'assets/sounds/metal_Gong.mp3';
+  static const tick = 'assets/sounds/tick.mp3';
+  static const tollingBell = 'assets/sounds/tolling_bell.mp3';
 }
