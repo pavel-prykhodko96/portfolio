@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:relax_button/constants/routes.dart';
-import 'package:relax_button/routes_generator.dart' as routesGenerator;
+import 'package:relax_button/models/background_color_model.dart';
+import 'package:relax_button/routes_generator.dart' as routes_generator;
 
 void main() {
   runApp(const MyApp());
@@ -10,9 +12,12 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      initialRoute: Routes.homeScreen,
-      onGenerateRoute: routesGenerator.generateRoute,
+    return ChangeNotifierProvider(
+      create: (context) => BackgroundColorModel(const Color(0xff7DC4D9)),
+      child: const MaterialApp(
+        initialRoute: Routes.homeScreen,
+        onGenerateRoute: routes_generator.generateRoute,
+      ),
     );
   }
 }

@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:just_audio/just_audio.dart';
 import 'package:relax_button/screens/button_box/button_box_animation_delegate.dart';
 import 'package:relax_button/constants/paths.dart';
-import 'package:relax_button/screens/button_box/button_box_screen_model.dart';
+import 'package:relax_button/models/button_box_screen_model.dart';
 import 'package:rive/rive.dart';
 
 class ButtonBoxScreenController {
