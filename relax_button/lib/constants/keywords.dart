@@ -1,4 +1,5 @@
 abstract class ButtonBoxKeywords {
+  ButtonBoxKeywords._();
   static const mainStateMachine = "MainSM";
 
   static const idleAnimation = "Idle";

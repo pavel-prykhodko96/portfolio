@@ -1,9 +1,8 @@
 import 'dart:math';
 
 import 'package:just_audio/just_audio.dart';
+import 'package:relax_button/models/sound_model.dart';
 import 'package:relax_button/screens/button_box/button_box_animation_delegate.dart';
-import 'package:relax_button/constants/paths.dart';
-import 'package:relax_button/models/button_box_screen_model.dart';
 import 'package:rive/rive.dart';
 
 class ButtonBoxScreenController {
@@ -31,10 +30,9 @@ class ButtonBoxScreenController {
     // TODO: refactor condition and selecting random value?
     if (_buttonBoxAnimationDelegate != null && !_isPressed) {
       _isPressed = true;
-      final randomInt = Random()
-          .nextInt(ButtonBoxScreenModel.possibleSoundsAssetsPaths.length);
+      final randomInt = Random().nextInt(SoundModel.activeSoundsList.length);
       _audioPlayer
-          .setAsset(ButtonBoxScreenModel.possibleSoundsAssetsPaths[randomInt])
+          .setAsset(SoundModel.activeSoundsList[randomInt].trackPath)
           .then((assetDuration) {
         _audioPlayer.play();
 

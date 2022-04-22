@@ -1,9 +1,11 @@
 abstract class AnimationsPaths {
+  AnimationsPaths._();
   static const buttonBoxAsset =
       'assets/rive_animations/button_box_fixed_projection.riv';
 }
 
 abstract class SoundsPaths {
+  SoundsPaths._();
   static const audienceApplause = 'assets/sounds/audience_applause.mp3';
   static const bellsTibetan = 'assets/sounds/bells_tibetan.mp3';
   static const blop = 'assets/sounds/blop.mp3';
