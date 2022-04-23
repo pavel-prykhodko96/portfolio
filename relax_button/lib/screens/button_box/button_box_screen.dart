@@ -1,16 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:relax_button/models/background_color_model.dart';
+import 'package:relax_button/models/color_model.dart';
 import 'package:relax_button/screens/button_box/button_box_screen_controller.dart';
 import 'package:relax_button/constants/paths.dart';
 import 'package:rive/rive.dart';
-
-// class ButtonBoxScreen extends StatefulWidget {
-//   const ButtonBoxScreen({Key? key}) : super(key: key);
-
-//   @override
-//   State<ButtonBoxScreen> createState() => _ButtonBoxScreenState();
-// }
 
 class ButtonBoxScreen extends StatelessWidget {
   final ButtonBoxScreenController _buttonBoxScreenController =
@@ -32,14 +25,12 @@ class ButtonBoxScreen extends StatelessWidget {
     // TODO: replace Scaffold with Container?
     return Scaffold(
       // TODO: save this color somewhere.
-      backgroundColor: Provider.of<BackgroundColorModel>(context).color,
+      backgroundColor: Provider.of<ColorModel>(context).backgroundColor,
       body: GestureDetector(
         child: _riveButtonBoxAnimation,
         // TODO: press only if tapped on the box, not anywhere?
         onTap: () {
-          Provider.of<BackgroundColorModel>(context, listen: false)
-              .changeColor(Colors.blueGrey);
-          _buttonBoxScreenController.onButtonBoxTapped();
+          _buttonBoxScreenController.onButtonBoxTapped(context);
         },
       ),
     );

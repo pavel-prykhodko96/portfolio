@@ -1,6 +1,9 @@
 import 'dart:math';
 
+import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:provider/provider.dart';
+import 'package:relax_button/models/color_model.dart';
 import 'package:relax_button/models/sound_model.dart';
 import 'package:relax_button/screens/button_box/button_box_animation_delegate.dart';
 import 'package:rive/rive.dart';
@@ -11,23 +14,21 @@ class ButtonBoxScreenController {
   bool _isPressed = false;
   ButtonBoxAnimationDelegate? _buttonBoxAnimationDelegate;
 
-  // bool get isPressed => _isPressed;
-
-  ButtonBoxScreenController() {}
-
-  // TODO: to be extendeed with changing background color, playing sounds etc.
   // TODO: fix it to set the controller only once. Set as final?
   initButtonBoxAnimationDelegate(Artboard artboard) {
     _buttonBoxAnimationDelegate = ButtonBoxAnimationDelegate(artboard);
   }
 
-  void onButtonBoxTapped() {
+  void onButtonBoxTapped(BuildContext context) {
     // TODO: implement logic to choose if here should be a press or not.
-    _press();
+    if (_buttonBoxAnimationDelegate != null && !_isPressed) {
+      Provider.of<ColorModel>(context, listen: false)
+          .changeBackgroundColorRandomly();
+      _press();
+    }
   }
 
   void _press() {
-    // TODO: refactor condition and selecting random value?
     if (_buttonBoxAnimationDelegate != null && !_isPressed) {
       _isPressed = true;
       final randomInt = Random().nextInt(SoundModel.activeSoundsList.length);

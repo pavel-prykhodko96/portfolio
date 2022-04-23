@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:relax_button/models/background_color_model.dart';
+import 'package:relax_button/models/color_model.dart';
 import 'package:relax_button/models/sound_model.dart';
 
 class LicensesScreen extends StatelessWidget {
   // TODO: implement style for whole aapp, not for eaach Text?
-  final _textStyle = const TextStyle(inherit: false);
 
   const LicensesScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final colorModel = Provider.of<ColorModel>(context);
+    final textColor = colorModel.textColor;
+    final textStyle = TextStyle(inherit: false, color: textColor);
+
     return Container(
-      color: Provider.of<BackgroundColorModel>(context).color,
+      color: colorModel.backgroundColor,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: ListView.builder(
@@ -23,17 +26,17 @@ class LicensesScreen extends StatelessWidget {
               children: [
                 Text(
                   'Track: ' + soundData.trackName + ' - ' + soundData.author,
-                  style: _textStyle,
+                  style: textStyle,
                 ),
                 Text(
                   'Material link: ' + soundData.materiallink,
-                  style: _textStyle,
+                  style: textStyle,
                 ),
                 Text(
                   'License link: ' + soundData.licenseLink,
-                  style: _textStyle,
+                  style: textStyle,
                 ),
-                const Divider(color: Colors.white),
+                Divider(color: textColor),
               ],
             );
           },
