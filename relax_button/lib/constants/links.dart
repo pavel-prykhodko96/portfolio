@@ -18,7 +18,7 @@ abstract class SoundMaterialLinks {
 abstract class SoundLicenseLinks {
   SoundLicenseLinks._();
   static const attribution_3_0 =
-      'https://creativecommons.org/licenses/by-nc/3.0/';
+      'https://creativecommons.org/licenses/by/3.0/deed.en';
   static const attributionNonCommercial_3_0 =
       'https://creativecommons.org/licenses/by-nc/3.0/';
   static const publicDomain = 'Public Domain';

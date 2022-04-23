@@ -5,6 +5,9 @@ import 'package:relax_button/constants/texts.dart';
 import 'package:relax_button/models/background_color_model.dart';
 
 class HomeScreen extends StatelessWidget {
+  // TODO: set style in one place? (MaterialApp)
+  final _textStyle = const TextStyle(color: Colors.white);
+
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
@@ -18,35 +21,37 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             const Spacer(),
+            // TODO: buttons can be creaated trough some method to not duplicate the code.
             OutlinedButton(
               onPressed: () =>
                   Navigator.of(context).pushNamed(Routes.buttonBoxScreen),
-              child: const Text(
+              child: Text(
                 Texts.start,
-                style: TextStyle(color: Colors.white),
+                style: _textStyle,
               ),
             ),
             OutlinedButton(
               onPressed: () => null, // TODO: help Ukraine link
-              child: const Text(
+              child: Text(
                 Texts.helpUkraine,
-                style: TextStyle(color: Colors.white),
+                style: _textStyle,
               ),
             ),
+            // TODO: Do I need contact us screen at all?
             OutlinedButton(
               onPressed: () =>
                   Navigator.of(context).pushNamed(Routes.contactUsScreen),
-              child: const Text(
+              child: Text(
                 Texts.contactUs,
-                style: TextStyle(color: Colors.white),
+                style: _textStyle,
               ),
             ),
             OutlinedButton(
               onPressed: () =>
                   Navigator.of(context).pushNamed(Routes.licensesScreen),
-              child: const Text(
+              child: Text(
                 Texts.licenses,
-                style: TextStyle(color: Colors.white),
+                style: _textStyle,
               ),
             ),
             const Spacer(),
