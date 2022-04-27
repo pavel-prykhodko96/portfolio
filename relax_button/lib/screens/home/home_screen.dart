@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:relax_button/constants/routes.dart';
 import 'package:relax_button/constants/texts.dart';
 import 'package:relax_button/models/color_model.dart';
+import 'package:relax_button/screens/home/home_menu_button.dart';
 
 class HomeScreen extends StatelessWidget {
   // TODO: set style in one place? (MaterialApp)
@@ -13,6 +14,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final colorModel = Provider.of<ColorModel>(context);
 
+    // TODO: send color only to button widget?
     final buttonTextStyle = TextStyle(
       inherit: false,
       color: colorModel.textColor,
@@ -30,46 +32,40 @@ class HomeScreen extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Spacer(),
             Text(
               Texts.relaxButton,
               style: logoTextStyle,
             ),
-            const SizedBox(height: 64),
+            SizedBox(height: 8),
+            Divider(color: buttonTextStyle.color),
             // TODO: buttons can be creaated trough some method to not duplicate the code.
-            OutlinedButton(
+            HomeMenuButton(
               onPressed: () =>
                   Navigator.of(context).pushNamed(Routes.buttonBoxScreen),
-              child: Text(
-                Texts.start,
-                style: buttonTextStyle,
-              ),
+              text: Texts.start,
+              textStyle: buttonTextStyle,
             ),
-            OutlinedButton(
+            HomeMenuButton(
               onPressed: () => null, // TODO: help Ukraine link
-              child: Text(
-                Texts.helpUkraine,
-                style: buttonTextStyle,
-              ),
+              text: Texts.helpUkraine,
+              textStyle: buttonTextStyle,
             ),
             // TODO: Do I need contact us screen at all?
-            OutlinedButton(
+            HomeMenuButton(
               onPressed: () =>
                   Navigator.of(context).pushNamed(Routes.contactUsScreen),
-              child: Text(
-                Texts.contactUs,
-                style: buttonTextStyle,
-              ),
+              text: Texts.contactUs,
+              textStyle: buttonTextStyle,
             ),
-            OutlinedButton(
+            HomeMenuButton(
               onPressed: () =>
                   Navigator.of(context).pushNamed(Routes.licensesScreen),
-              child: Text(
-                Texts.licenses,
-                style: buttonTextStyle,
-              ),
+              text: Texts.licenses,
+              textStyle: buttonTextStyle,
             ),
             const Spacer(),
           ],
