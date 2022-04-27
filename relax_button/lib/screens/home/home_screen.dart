@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
+import 'package:relax_button/constants/paths.dart';
 import 'package:relax_button/constants/routes.dart';
 import 'package:relax_button/constants/texts.dart';
 import 'package:relax_button/controllers/colors_controller.dart';
 import 'package:relax_button/screens/home/home_menu_button.dart';
+import 'package:relax_button/utils/url_launcher.dart';
 
 class HomeScreen extends StatelessWidget {
   // TODO: set style in one place? (MaterialApp)
@@ -41,7 +44,7 @@ class HomeScreen extends StatelessWidget {
               style: logoTextStyle,
             ),
             SizedBox(height: 8),
-            Divider(color: buttonTextStyle.color),
+            Divider(color: colorModel.textColor),
             // TODO: buttons can be creaated trough some method to not duplicate the code.
             HomeMenuButton(
               onPressed: () =>
@@ -50,9 +53,14 @@ class HomeScreen extends StatelessWidget {
               textStyle: buttonTextStyle,
             ),
             HomeMenuButton(
-              onPressed: () => null, // TODO: help Ukraine link
+              onPressed: () => UrlLauncher.launchHelpUkraine(),
               text: Texts.helpUkraine,
               textStyle: buttonTextStyle,
+              widgetRightToText: SvgPicture.asset(
+                SvgsPaths.ukraineFlag,
+                height: 24,
+                colorBlendMode: BlendMode.colorDodge,
+              ),
             ),
             // TODO: Do I need contact us screen at all?
             HomeMenuButton(

@@ -4,6 +4,12 @@ abstract class AnimationsPaths {
       'assets/rive_animations/button_box_fixed_projection.riv';
 }
 
+abstract class SvgsPaths {
+  SvgsPaths._();
+  // https://freesvg.org/1546705889
+  static const ukraineFlag = 'assets/svgs/ukraine_flag.svg';
+}
+
 abstract class SoundsPaths {
   SoundsPaths._();
   static const audienceApplause = 'assets/sounds/audience_applause.mp3';

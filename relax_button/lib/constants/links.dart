@@ -23,3 +23,7 @@ abstract class SoundLicenseLinks {
       'https://creativecommons.org/licenses/by-nc/3.0/';
   static const publicDomain = 'Public Domain';
 }
+
+abstract class UrlLaunncherLinks {
+  static const supportUkraine = 'https://supportukrainenow.org/';
+}
