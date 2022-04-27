@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:relax_button/models/color_model.dart';
+import 'package:relax_button/controllers/colors_controller.dart';
 import 'package:relax_button/screens/button_box/button_box_screen_controller.dart';
 import 'package:relax_button/constants/paths.dart';
 import 'package:rive/rive.dart';
@@ -25,7 +25,7 @@ class ButtonBoxScreen extends StatelessWidget {
     // TODO: replace Scaffold with Container?
     return Scaffold(
       // TODO: save this color somewhere.
-      backgroundColor: Provider.of<ColorModel>(context).backgroundColor,
+      backgroundColor: Provider.of<ColorsController>(context).backgroundColor,
       body: GestureDetector(
         child: _riveButtonBoxAnimation,
         // TODO: press only if tapped on the box, not anywhere?

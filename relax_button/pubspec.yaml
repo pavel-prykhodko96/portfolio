@@ -21,6 +21,7 @@ dependencies:
   flutter:
     sdk: flutter
   provider: ^6.0.2
+  shared_preferences: ^2.0.13
   rive: ^0.8.4
   just_audio: ^0.9.20
 

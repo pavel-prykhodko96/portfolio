@@ -10,3 +10,10 @@ abstract class ButtonBoxKeywords {
   static const unpressed = "Unpressed";
   static const exited = "Exited";
 }
+
+abstract class SharedPreferencesKeywords {
+  SharedPreferencesKeywords._();
+
+  static const backgroundColor = "backgroundColor";
+  static const textColor = "textColor";
+}

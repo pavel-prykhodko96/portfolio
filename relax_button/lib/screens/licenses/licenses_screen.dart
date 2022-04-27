@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:relax_button/models/color_model.dart';
+import 'package:relax_button/controllers/colors_controller.dart';
 import 'package:relax_button/models/sound_model.dart';
 
 class LicensesScreen extends StatelessWidget {
@@ -10,7 +10,7 @@ class LicensesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colorModel = Provider.of<ColorModel>(context);
+    final colorModel = Provider.of<ColorsController>(context);
     final textColor = colorModel.textColor;
     final textStyle = TextStyle(inherit: false, color: textColor);
 

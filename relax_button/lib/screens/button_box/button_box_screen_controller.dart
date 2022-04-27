@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:provider/provider.dart';
-import 'package:relax_button/models/color_model.dart';
+import 'package:relax_button/controllers/colors_controller.dart';
 import 'package:relax_button/models/sound_model.dart';
 import 'package:relax_button/screens/button_box/button_box_animation_delegate.dart';
 import 'package:rive/rive.dart';
@@ -22,7 +22,7 @@ class ButtonBoxScreenController {
   void onButtonBoxTapped(BuildContext context) {
     // TODO: implement logic to choose if here should be a press or not.
     if (_buttonBoxAnimationDelegate != null && !_isPressed) {
-      Provider.of<ColorModel>(context, listen: false)
+      Provider.of<ColorsController>(context, listen: false)
           .changeBackgroundColorRandomly();
       _press();
     }

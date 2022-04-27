@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:relax_button/constants/routes.dart';
 import 'package:relax_button/constants/texts.dart';
-import 'package:relax_button/models/color_model.dart';
+import 'package:relax_button/controllers/colors_controller.dart';
 import 'package:relax_button/screens/home/home_menu_button.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colorModel = Provider.of<ColorModel>(context);
+    final colorModel = Provider.of<ColorsController>(context);
 
     // TODO: send color only to button widget?
     final buttonTextStyle = TextStyle(
