@@ -1,8 +1,11 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:relax_button/constants/routes.dart';
 import 'package:relax_button/controllers/colors_controller.dart';
+import 'package:relax_button/models/sizes_model.dart';
 import 'package:relax_button/repositories/preferences.dart';
 import 'package:relax_button/routes_generator.dart' as routes_generator;
 
@@ -18,9 +21,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(375, 667), // iPhone SE 2nd gen logical resolution
-      builder: (_) => ChangeNotifierProvider(
-        create: (context) => ColorsController(),
-        child: const MaterialApp(
+      builder: (_) => MultiProvider(
+        providers: [
+          ChangeNotifierProvider(
+            create: (context) => ColorsController(),
+          ),
+          // Can be deleted if not used:
+          Provider(
+            create: (context) => SizesModel(
+                systemIconsTopHeight:
+                    MediaQueryData.fromWindow(window).padding.top),
+          ),
+        ],
+        builder: (context, widget) => const MaterialApp(
           initialRoute: Routes.homeScreen,
           onGenerateRoute: routes_generator.generateRoute,
         ),

@@ -6,4 +6,5 @@ abstract class RelaxButtonTexts {
   static const helpUkraine = "Help Ukraine";
   static const licenses = "Licenses";
   static const contactUs = "Contact us";
+  static const sounds = "Sounds";
 }

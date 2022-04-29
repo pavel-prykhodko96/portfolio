@@ -11,7 +11,7 @@ abstract class UrlLauncher {
   }
 
   static launchHelpUkraine() async {
-    await _launchUrl(Uri.parse(UrlLaunncherLinks.supportUkraine));
+    await _launchUrl(Uri.parse(UrlLauncherLinks.supportUkraine));
   }
 
   static launchMailTo() async {
