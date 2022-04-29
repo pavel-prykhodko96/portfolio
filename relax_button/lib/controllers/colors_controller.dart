@@ -1,19 +1,19 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:relax_button/constants/colors.dart';
 import 'package:relax_button/repositories/preferences.dart';
 
 class ColorsController with ChangeNotifier {
   final Preferences _preferences = Preferences();
   late Color _backgroundColor;
   late Color _textColor;
-  final Color _logoColor = Colors.black;
+  final Color _logoColor = RelaxButtonColors.defaultLogo;
 
   Color get backgroundColor => _backgroundColor;
   Color get textColor => _textColor;
   Color get logoColor => _logoColor;
 
-  // TODO: init with value from persistance instead of runtime
   ColorsController() {
     _backgroundColor = _preferences.backgroundColor;
     _textColor = _preferences.textColor;

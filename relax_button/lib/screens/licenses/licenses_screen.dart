@@ -10,12 +10,12 @@ class LicensesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colorModel = Provider.of<ColorsController>(context);
-    final textColor = colorModel.textColor;
+    final colorsController = Provider.of<ColorsController>(context);
+    final textColor = colorsController.textColor;
     final textStyle = TextStyle(inherit: false, color: textColor);
 
     return Container(
-      color: colorModel.backgroundColor,
+      color: colorsController.backgroundColor,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: ListView.builder(

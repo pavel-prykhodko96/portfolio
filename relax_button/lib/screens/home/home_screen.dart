@@ -15,23 +15,22 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colorModel = Provider.of<ColorsController>(context);
+    final colorsController = Provider.of<ColorsController>(context);
 
     // TODO: send color only to button widget?
     final buttonTextStyle = TextStyle(
       inherit: false,
-      color: colorModel.textColor,
+      color: colorsController.textColor,
     );
 
     final logoTextStyle = TextStyle(
       inherit: false,
       fontSize: 30,
-      color: colorModel.logoColor,
+      color: colorsController.logoColor,
     );
 
     return Container(
-      // TODO: save this color somewhere./refactor
-      color: colorModel.backgroundColor,
+      color: colorsController.backgroundColor,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
@@ -40,21 +39,20 @@ class HomeScreen extends StatelessWidget {
           children: [
             const Spacer(),
             Text(
-              Texts.relaxButton,
+              RelaxButtonTexts.relaxButton,
               style: logoTextStyle,
             ),
-            SizedBox(height: 8),
-            Divider(color: colorModel.textColor),
-            // TODO: buttons can be creaated trough some method to not duplicate the code.
+            const SizedBox(height: 8),
+            Divider(color: colorsController.textColor),
             HomeMenuButton(
               onPressed: () =>
                   Navigator.of(context).pushNamed(Routes.buttonBoxScreen),
-              text: Texts.start,
+              text: RelaxButtonTexts.start,
               textStyle: buttonTextStyle,
             ),
             HomeMenuButton(
               onPressed: () => UrlLauncher.launchHelpUkraine(),
-              text: Texts.helpUkraine,
+              text: RelaxButtonTexts.helpUkraine,
               textStyle: buttonTextStyle,
               widgetRightToText: SvgPicture.asset(
                 SvgsPaths.ukraineFlag,
@@ -62,17 +60,15 @@ class HomeScreen extends StatelessWidget {
                 colorBlendMode: BlendMode.colorDodge,
               ),
             ),
-            // TODO: Do I need contact us screen at all?
             HomeMenuButton(
-              onPressed: () =>
-                  Navigator.of(context).pushNamed(Routes.contactUsScreen),
-              text: Texts.contactUs,
+              onPressed: () => UrlLauncher.launchMailTo(),
+              text: RelaxButtonTexts.contactUs,
               textStyle: buttonTextStyle,
             ),
             HomeMenuButton(
               onPressed: () =>
                   Navigator.of(context).pushNamed(Routes.licensesScreen),
-              text: Texts.licenses,
+              text: RelaxButtonTexts.licenses,
               textStyle: buttonTextStyle,
             ),
             const Spacer(),

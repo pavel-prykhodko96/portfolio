@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:relax_button/constants/paths.dart';
 
 class HomeMenuButton extends StatelessWidget {
   final String text;
