@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:relax_button/constants/routes.dart';
 import 'package:relax_button/controllers/colors_controller.dart';
@@ -15,11 +16,14 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => ColorsController(),
-      child: const MaterialApp(
-        initialRoute: Routes.homeScreen,
-        onGenerateRoute: routes_generator.generateRoute,
+    return ScreenUtilInit(
+      designSize: const Size(375, 667), // iPhone SE 2nd gen logical resolution
+      builder: (_) => ChangeNotifierProvider(
+        create: (context) => ColorsController(),
+        child: const MaterialApp(
+          initialRoute: Routes.homeScreen,
+          onGenerateRoute: routes_generator.generateRoute,
+        ),
       ),
     );
   }

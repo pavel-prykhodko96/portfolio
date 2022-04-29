@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeMenuButton extends StatelessWidget {
   final String text;
@@ -16,8 +17,8 @@ class HomeMenuButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 36,
-      width: 250,
+      height: 36.w,
+      width: 250.w,
       child: TextButton(
         style: TextButton.styleFrom(primary: textStyle.color),
         onPressed: onPressed,

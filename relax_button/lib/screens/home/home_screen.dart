@@ -3,10 +3,12 @@ import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import 'package:relax_button/constants/paths.dart';
 import 'package:relax_button/constants/routes.dart';
+import 'package:relax_button/constants/text_styles.dart';
 import 'package:relax_button/constants/texts.dart';
 import 'package:relax_button/controllers/colors_controller.dart';
 import 'package:relax_button/screens/home/home_menu_button.dart';
 import 'package:relax_button/utils/url_launcher.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeScreen extends StatelessWidget {
   // TODO: set style in one place? (MaterialApp)
@@ -18,21 +20,16 @@ class HomeScreen extends StatelessWidget {
     final colorsController = Provider.of<ColorsController>(context);
 
     // TODO: send color only to button widget?
-    final buttonTextStyle = TextStyle(
-      inherit: false,
-      color: colorsController.textColor,
-    );
+    final buttonTextStyle =
+        TextStyles.regular.copyWith(color: colorsController.textColor);
 
-    final logoTextStyle = TextStyle(
-      inherit: false,
-      fontSize: 30,
-      color: colorsController.logoColor,
-    );
+    final logoTextStyle =
+        TextStyles.header.copyWith(color: colorsController.logoColor);
 
-    return Container(
-      color: colorsController.backgroundColor,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+    return Scaffold(
+      backgroundColor: colorsController.backgroundColor,
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16.w),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -42,7 +39,7 @@ class HomeScreen extends StatelessWidget {
               RelaxButtonTexts.relaxButton,
               style: logoTextStyle,
             ),
-            const SizedBox(height: 8),
+            SizedBox(height: 7.w),
             Divider(color: colorsController.textColor),
             HomeMenuButton(
               onPressed: () =>
@@ -56,7 +53,7 @@ class HomeScreen extends StatelessWidget {
               textStyle: buttonTextStyle,
               widgetRightToText: SvgPicture.asset(
                 SvgsPaths.ukraineFlag,
-                height: 24,
+                height: 24.w,
                 colorBlendMode: BlendMode.colorDodge,
               ),
             ),
