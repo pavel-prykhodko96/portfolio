@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:relax_button/controllers/colors_controller.dart';
 import 'package:relax_button/screens/button_box/button_box_screen_controller.dart';
 import 'package:relax_button/constants/paths.dart';
+import 'package:relax_button/widgets/app_bar.dart';
 import 'package:rive/rive.dart';
 
 class ButtonBoxScreen extends StatelessWidget {
@@ -21,11 +22,16 @@ class ButtonBoxScreen extends StatelessWidget {
       onInit: _buttonBoxScreenController.initButtonBoxAnimationDelegate,
     );
 
+    final colorsController = Provider.of<ColorsController>(context);
+
     // TODO: streams for background color/picture and aadditional animations.
     // TODO: replace Scaffold with Container?
     return Scaffold(
-      // TODO: save this color somewhere.
-      backgroundColor: Provider.of<ColorsController>(context).backgroundColor,
+      backgroundColor: colorsController.backgroundColor,
+      extendBodyBehindAppBar: true,
+      appBar: RelaxButtonAppBar(
+        iconTheme: IconThemeData(color: colorsController.textColor),
+      ),
       body: GestureDetector(
         child: _riveButtonBoxAnimation,
         // TODO: press only if tapped on the box, not anywhere?

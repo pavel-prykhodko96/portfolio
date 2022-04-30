@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+// Currently unused. May be deleted later.
 class SystemTopBar extends AppBar {
   SystemTopBar({Key? key})
       : super(
