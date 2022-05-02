@@ -6,16 +6,27 @@ import 'package:relax_button/constants/paths.dart';
 import 'package:relax_button/widgets/app_bar.dart';
 import 'package:rive/rive.dart';
 
-class ButtonBoxScreen extends StatelessWidget {
+class ButtonBoxScreen extends StatefulWidget {
+  const ButtonBoxScreen({Key? key}) : super(key: key);
+
+  @override
+  State<ButtonBoxScreen> createState() => _ButtonBoxScreenState();
+}
+
+class _ButtonBoxScreenState extends State<ButtonBoxScreen> {
   final ButtonBoxScreenController _buttonBoxScreenController =
       ButtonBoxScreenController();
 
-  ButtonBoxScreen({Key? key}) : super(key: key);
+  @override
+  void dispose() {
+    _buttonBoxScreenController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     // TODO: check will it be rebuilt if placed to 'body' directly.
-    // TODO: replaace with button box animation with property onInit that throws artboard up (without delegation)
+    // TODO: replace with button box animation with property onInit that throws artboard up (without delegation)
     final _riveButtonBoxAnimation = RiveAnimation.asset(
       AnimationsPaths.buttonBoxAsset,
       fit: BoxFit.contain,

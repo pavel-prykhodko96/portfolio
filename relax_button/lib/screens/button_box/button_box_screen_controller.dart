@@ -19,6 +19,10 @@ class ButtonBoxScreenController {
     _buttonBoxAnimationDelegate = ButtonBoxAnimationDelegate(artboard);
   }
 
+  dispose() {
+    _audioPlayer.dispose();
+  }
+
   void onButtonBoxTapped(BuildContext context) {
     // TODO: implement logic to choose if here should be a press or not.
     if (_buttonBoxAnimationDelegate != null && !_isPressed) {
