@@ -1,6 +1,5 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:relax_button/constants/routes.dart';
@@ -12,6 +11,7 @@ import 'package:relax_button/navigation/routes_generator.dart'
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   await Preferences.initialize();
   runApp(const MyApp());
 }
