@@ -19,7 +19,6 @@ class ColorsController with ChangeNotifier {
     _textColor = _preferences.textColor;
   }
 
-  // TODO: this method is not suitable for model
   void changeBackgroundColorRandomly() {
     // Generates light colors
     final random = Random();

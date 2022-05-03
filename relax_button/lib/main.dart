@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:relax_button/constants/routes.dart';
 import 'package:relax_button/controllers/colors_controller.dart';
-import 'package:relax_button/models/sizes_model.dart';
 import 'package:relax_button/navigation/navigator.dart';
 import 'package:relax_button/repositories/preferences.dart';
 import 'package:relax_button/navigation/routes_generator.dart'
@@ -27,12 +26,6 @@ class MyApp extends StatelessWidget {
         providers: [
           ChangeNotifierProvider(
             create: (context) => ColorsController(),
-          ),
-          // Can be deleted if not used:
-          Provider(
-            create: (context) => SizesModel(
-                systemIconsTopHeight:
-                    MediaQueryData.fromWindow(window).padding.top),
           ),
         ],
         builder: (context, widget) => MaterialApp(

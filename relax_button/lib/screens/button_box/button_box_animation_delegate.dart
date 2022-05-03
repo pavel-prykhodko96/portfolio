@@ -3,7 +3,6 @@ import 'package:rive/rive.dart';
 
 enum AnimationState { pressing, unpressing, idle, unknown }
 
-// TODO: replaace with button box animation with property onInit that throws artboard up (without delegation)?
 class ButtonBoxAnimationDelegate {
   static const pressingDuration = Duration(milliseconds: 500);
   static const unpressiingDuration = Duration(seconds: 1);
@@ -31,7 +30,6 @@ class ButtonBoxAnimationDelegate {
 
   void _stateMachineControllerStateChanged(
       String stateMachineName, String animationName) {
-    print(animationName);
     if (animationName == ButtonBoxKeywords.idleAnimation) {
       _animationState = AnimationState.idle;
     } else if (animationName == ButtonBoxKeywords.pressingAnimation) {

@@ -9,12 +9,10 @@ import 'package:relax_button/screens/button_box/button_box_animation_delegate.da
 import 'package:rive/rive.dart';
 
 class ButtonBoxScreenController {
-  // TODO: currently it is here, but is it ok?:
   final AudioPlayer _audioPlayer = AudioPlayer();
   bool _isPressed = false;
   ButtonBoxAnimationDelegate? _buttonBoxAnimationDelegate;
 
-  // TODO: fix it to set the controller only once. Set as final?
   initButtonBoxAnimationDelegate(Artboard artboard) {
     _buttonBoxAnimationDelegate = ButtonBoxAnimationDelegate(artboard);
   }
@@ -24,7 +22,6 @@ class ButtonBoxScreenController {
   }
 
   void onButtonBoxTapped(BuildContext context) {
-    // TODO: implement logic to choose if here should be a press or not.
     if (_buttonBoxAnimationDelegate != null && !_isPressed) {
       Provider.of<ColorsController>(context, listen: false)
           .changeBackgroundColorRandomly();
@@ -56,7 +53,6 @@ class ButtonBoxScreenController {
   }
 
   void _unpress() {
-    print("trying to unpress...");
     if (_buttonBoxAnimationDelegate != null && _isPressed) {
       _buttonBoxAnimationDelegate?.unpress();
       Future.delayed(

@@ -22,8 +22,7 @@ class Preferences {
     try {
       _sharedPreferences = await SharedPreferences.getInstance();
     } catch (err) {
-      print(
-          "Error occured: $err. Did you called Preferences.initialize() more than once?");
+      throw "Error occured: $err. Did you called Preferences.initialize() more than once?";
     }
   }
 

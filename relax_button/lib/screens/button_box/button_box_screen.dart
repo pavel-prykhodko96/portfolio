@@ -25,9 +25,7 @@ class _ButtonBoxScreenState extends State<ButtonBoxScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: check will it be rebuilt if placed to 'body' directly.
-    // TODO: replace with button box animation with property onInit that throws artboard up (without delegation)
-    final _riveButtonBoxAnimation = RiveAnimation.asset(
+    final riveButtonBoxAnimation = RiveAnimation.asset(
       AnimationsPaths.buttonBoxAsset,
       fit: BoxFit.contain,
       onInit: _buttonBoxScreenController.initButtonBoxAnimationDelegate,
@@ -35,8 +33,6 @@ class _ButtonBoxScreenState extends State<ButtonBoxScreen> {
 
     final colorsController = Provider.of<ColorsController>(context);
 
-    // TODO: streams for background color/picture and aadditional animations.
-    // TODO: replace Scaffold with Container?
     return Scaffold(
       backgroundColor: colorsController.backgroundColor,
       extendBodyBehindAppBar: true,
@@ -44,8 +40,7 @@ class _ButtonBoxScreenState extends State<ButtonBoxScreen> {
         iconTheme: IconThemeData(color: colorsController.textColor),
       ),
       body: GestureDetector(
-        child: _riveButtonBoxAnimation,
-        // TODO: press only if tapped on the box, not anywhere?
+        child: riveButtonBoxAnimation,
         onTap: () {
           _buttonBoxScreenController.onButtonBoxTapped(context);
         },

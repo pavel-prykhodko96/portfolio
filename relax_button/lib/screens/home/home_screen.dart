@@ -12,15 +12,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:relax_button/widgets/mail_reference_bottom_sheet.dart';
 
 class HomeScreen extends StatelessWidget {
-  // TODO: set style in one place? (MaterialApp)
-
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final colorsController = Provider.of<ColorsController>(context);
 
-    // TODO: send color only to button widget?
     final buttonTextStyle =
         TextStyles.regular.copyWith(color: colorsController.textColor);
 
