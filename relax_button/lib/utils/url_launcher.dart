@@ -2,11 +2,11 @@ import 'package:relax_button/constants/links.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 abstract class UrlLauncher {
-  static _launchUrl(Uri url) async {
+  static _launchUrl(Uri url, [Function? onError]) async {
     if (await canLaunchUrl(url)) {
       await launchUrl(url);
     } else {
-      throw 'Could not launch $url';
+      onError != null ? onError() : throw 'Could not launch $url';
     }
   }
 
@@ -14,9 +14,7 @@ abstract class UrlLauncher {
     await _launchUrl(Uri.parse(UrlLauncherLinks.supportUkraine));
   }
 
-  static launchMailTo() async {
-    await _launchUrl(Uri.parse(
-      "mailto:relax.button.app@gmail.com?subject=Contact Us&body=Hi, Relax Button team!",
-    ));
+  static launchMailTo([Function? onError]) async {
+    await _launchUrl(Uri.parse(UrlLauncherLinks.mailToRelaxButton), onError);
   }
 }

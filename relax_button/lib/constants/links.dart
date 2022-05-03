@@ -22,4 +22,6 @@ abstract class SoundLicenseLinks {
 
 abstract class UrlLauncherLinks {
   static const supportUkraine = 'https://supportukrainenow.org/';
+  static const mailToRelaxButton =
+      'mailto:relax.button.app@gmail.com?subject=Contact Us&body=Hi, Relax Button team!';
 }

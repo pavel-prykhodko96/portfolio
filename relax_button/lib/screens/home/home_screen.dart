@@ -9,6 +9,7 @@ import 'package:relax_button/controllers/colors_controller.dart';
 import 'package:relax_button/screens/home/home_menu_button.dart';
 import 'package:relax_button/utils/url_launcher.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:relax_button/widgets/mail_reference_bottom_sheet.dart';
 
 class HomeScreen extends StatelessWidget {
   // TODO: set style in one place? (MaterialApp)
@@ -25,6 +26,9 @@ class HomeScreen extends StatelessWidget {
 
     final logoTextStyle =
         TextStyles.header.copyWith(color: colorsController.logoColor);
+
+    final bottomSheetTextStyle =
+        TextStyles.regular.copyWith(color: colorsController.textColor);
 
     return Scaffold(
       backgroundColor: colorsController.backgroundColor,
@@ -58,7 +62,16 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             HomeMenuButton(
-              onPressed: () => UrlLauncher.launchMailTo(),
+              onPressed: () => UrlLauncher.launchMailTo(
+                () => {
+                  showModalBottomSheet(
+                    backgroundColor: colorsController.backgroundColor,
+                    context: context,
+                    builder: (context) =>
+                        MailReferenceBottomSheet(bottomSheetTextStyle),
+                  )
+                },
+              ),
               text: RelaxButtonTexts.contactUs,
               textStyle: buttonTextStyle,
             ),
