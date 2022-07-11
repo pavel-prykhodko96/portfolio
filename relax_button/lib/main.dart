@@ -9,6 +9,7 @@ import 'package:relax_button/repositories/preferences.dart';
 import 'package:relax_button/navigation/routes_generator.dart'
     as routes_generator;
 
+// flutter version 2.10.4
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
